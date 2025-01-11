@@ -4,11 +4,9 @@ import { Blog } from '@/interfaces/Blog';
 import { BlogHeader } from '@/components/blogs';
 import { PageLayout } from '@/components/layouts';
 
-// type Props = {
-//   params: { slug: string }; 
-// };
-
-type tParams = Promise<{ slug: string }>;
+type Props = {
+  params: { slug: string }; 
+};
 
 // Dynamically generate static paths
 export const generateStaticParams = async () => {
@@ -18,25 +16,19 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export const generateMetadata = async (props: { params: tParams }): Promise<Metadata> => {
-  const { slug } = await props.params;
-  const blog: Blog | null = await getBlogBySlug(slug);
-  if (!blog) {
-    return {
-      title: 'Blog Not Found',
-    };
-  }
-  return {
-    title: blog.title,
-  };
+export const metadata: Metadata = {
+  title: 'Blog'
 };
-const BlogDetail = async (props: { params: tParams }) => {
-  const { slug } = await props.params;
+
+const BlogDetail = async ({ params }: Props) => {
+  const { slug } = await params;
   const blog: Blog | null = await getBlogBySlug(slug);
   const blogHTML = blog ? await getBlogBySlugWithMarkdown(slug) : null;
 
 
-  if (!blog) {
+  if (blog) {
+    metadata.title = blog.title;
+  } else {
     return (
       <PageLayout>
         <div className="text-center mt-10 text-xl">Blog not found.</div>
