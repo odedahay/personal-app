@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .markdown-image-50 img {
+    max-width: 50%;
+    margin: auto;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,3 +26,38 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.page-layout {
+  min-height: calc(100vh - 232px);
+}
+
+
+/* .bg-blue-600 {
+  background-color: #2563eb;
+}
+
+.text-white {
+  color: white;
+}
+
+.bg-gray-200 {
+  background-color: #e5e7eb;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+} */
