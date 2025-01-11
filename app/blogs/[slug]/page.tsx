@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
-
-import { PageLayout } from '@/components/layouts';
 import { getBlogBySlug, getBlogsSlug, getBlogBySlugWithMarkdown } from '@/lib/blogs';
 import { Blog } from '@/interfaces/Blog';
 import { BlogHeader } from '@/components/blogs';
+import { PageLayout } from '@/components/layouts';
 
 type Props = {
   params: { slug: string }; 
@@ -17,19 +16,25 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export const metadata: Metadata = {
-  title: 'Blog'
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+  const blog = await getBlogBySlug(params.slug);
+  if (!blog) {
+    return {
+      title: 'Blog Not Found',
+    };
+  }
+  return {
+    title: blog.title,
+  };
 };
 
 const BlogDetail = async ({ params }: Props) => {
-  const { slug } = await params;
+  const { slug } = params;
   const blog: Blog | null = await getBlogBySlug(slug);
   const blogHTML = blog ? await getBlogBySlugWithMarkdown(slug) : null;
 
 
-  if (blog) {
-    metadata.title = blog.title;
-  } else {
+  if (!blog) {
     return (
       <PageLayout>
         <div className="text-center mt-10 text-xl">Blog not found.</div>
