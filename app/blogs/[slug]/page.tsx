@@ -30,7 +30,7 @@ const BlogDetail = async (props: { params: Params }) => {
   } else {
     return (
       <PageLayout>
-        <div className="text-center mt-10 text-xl">Portfolio not found.</div>
+        <div className="text-center mt-10 text-xl">Blog's page not found.</div>
       </PageLayout>
     );
   }

@@ -10,26 +10,36 @@ import { getPorfolioBySlugWithMarkdown, getPortfolioBySlug } from '@/lib/portfol
 // };
 
 type Params = Promise<{ slug: string}>
+
+// Dynamically generate static paths
+// export const generateStaticParams = async () => {
+//     const slugs: string[] = await getBlogsSlug();
+//     return slugs.map((slug) => ({
+//       slug,
+//     }));
+//   };
   
-  export const metadata: Metadata = {
+export const metadata: Metadata = {
     title: 'Portfolio'
   };
 
+
 const PortfolioDetail = async (props: { params: Params }) => {
     const { slug } = await props.params;
-    const portfolio = await getPortfolioBySlug(slug);
-    const portfolioHTML = portfolio ? await getPorfolioBySlugWithMarkdown(slug) : null;
+    const portfolio: Portfolio | null = await getPortfolioBySlug(slug);
+    const blogHTML = portfolio ? await getPorfolioBySlugWithMarkdown(slug) : null;
 
     if (portfolio) {
         metadata.title = portfolio.title;
       } else {
         return (
           <PageLayout>
-            <div className="text-center mt-10 text-xl">Portfolio not found.</div>
+            <div className="text-center mt-10 text-xl">Portfolio's page not found.</div>
           </PageLayout>
         );
       }
     
+
     return (
         <PageLayout>
             <div className="pt-1">
@@ -71,7 +81,7 @@ const PortfolioDetail = async (props: { params: Params }) => {
                             <h2 className="text-sm font-bold text-gray-900">Details</h2>
                             <div className="mt-4 space-y-6">
                                 <article className="text-sm text-gray-600">
-                                    <div dangerouslySetInnerHTML={{ __html: portfolioHTML?.content || '' }} />
+                                    <div dangerouslySetInnerHTML={{ __html: blogHTML?.content || '' }} />
                                 </article>
                             </div>
                         </div>
