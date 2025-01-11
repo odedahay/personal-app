@@ -4,9 +4,11 @@ import { Blog } from '@/interfaces/Blog';
 import { BlogHeader } from '@/components/blogs';
 import { PageLayout } from '@/components/layouts';
 
-interface BlogParams {
-  slug: string;
-}
+// type Props = {
+//   params: { slug: string }; 
+// };
+
+type tParams = Promise<{ slug: string }>;
 
 // Dynamically generate static paths
 export const generateStaticParams = async () => {
@@ -16,9 +18,9 @@ export const generateStaticParams = async () => {
   }));
 };
 
-// Generate metadata dynamically
-export const generateMetadata = async ({ params }: { params: BlogParams }): Promise<Metadata> => {
-  const blog = await getBlogBySlug(params.slug);
+export const generateMetadata = async (props: { params: tParams }): Promise<Metadata> => {
+  const { slug } = await props.params;
+  const blog: Blog | null = await getBlogBySlug(slug);
   if (!blog) {
     return {
       title: 'Blog Not Found',
@@ -28,11 +30,11 @@ export const generateMetadata = async ({ params }: { params: BlogParams }): Prom
     title: blog.title,
   };
 };
-
-const BlogDetail = async ({ params }: { params: BlogParams }) => {
-  const { slug } = await params;
+const BlogDetail = async (props: { params: tParams }) => {
+  const { slug } = await props.params;
   const blog: Blog | null = await getBlogBySlug(slug);
   const blogHTML = blog ? await getBlogBySlugWithMarkdown(slug) : null;
+
 
   if (!blog) {
     return (
