@@ -4,21 +4,23 @@ import { PageLayout } from "@/components/layouts";
 import { getBlogs } from "@/lib/blogs";
 import Link from "next/link";
 
+type Params = Promise<{ category: string}>
+
 // const BlogsPage: NextPage = async () => {
 // const blogs = await getBlogs();
 
 // Mark the component as async to handle dynamic routing
-const BlogsPage = async ({searchParams}: {searchParams: { category?: string } }) => {
-
+//const BlogsPage = async (props: { searchParams: Params}: { searchParams: { category?: string } }) => {
+const BlogsPage = async (props: { searchParams: Params}) => {
+    const { category } = await props.searchParams;
     // Fetch all blogs
     const blogs = await getBlogs();
 
     // must await the selected category from searchParams
-    const searchParam = await searchParams;
-    const selectedCategory = searchParam.category || "";
+    const selectedCategory = category || "";
 
     // Filter blogs based on the selected category
-    const filteredBlogs = await selectedCategory
+    const filteredBlogs = selectedCategory
         ? blogs.filter((blog) => blog.category === selectedCategory)
         : blogs;
 
@@ -34,14 +36,12 @@ const BlogsPage = async ({searchParams}: {searchParams: { category?: string } })
                 <span className="font-semibold">Filter by Category:</span>
                 <ul className="flex gap-2 mt-2">
                     {/* All Categories */}
-                    
                     <li>
-                        <Link href="/blogs"
-                            className={`px-3 py-1 rounded-lg 
-                                ${!selectedCategory ? 
-                                "bg-blue-600 text-white" : 
-                                "bg-gray-200"
-                                }`}>
+                        <Link
+                            href="/blogs"
+                            className={`px-3 py-1 rounded-lg ${!selectedCategory ? "bg-blue-600 text-white" : "bg-gray-200"
+                                }`}
+                        >
                             All
                         </Link>
                     </li>
@@ -51,9 +51,7 @@ const BlogsPage = async ({searchParams}: {searchParams: { category?: string } })
                         <li key={category}>
                             <Link
                                 href={`/blogs?category=${category}`}
-                                className={`px-3 py-1 rounded-lg ${selectedCategory === category
-                                        ? "bg-blue-600 text-white"
-                                        : "bg-gray-200"
+                                className={`px-3 py-1 rounded-lg ${selectedCategory === category ? "bg-blue-600 text-white" : "bg-gray-200"
                                     }`}
                             >
                                 {category}
