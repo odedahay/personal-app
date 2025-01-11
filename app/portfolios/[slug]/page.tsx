@@ -5,9 +5,11 @@ import { PageLayout } from '@/components/layouts';
 import { Portfolio } from '@/interfaces/Portfolio';
 import { getPorfolioBySlugWithMarkdown, getPortfolioBySlug } from '@/lib/portfolios';
 
-type Props = {
-    params: { slug: string };
-};
+// type Props = {
+//     params: { slug: string };
+// };
+
+type Params = Promise<{ slug: string}>
 
 // Dynamically generate static paths
 // export const generateStaticParams = async () => {
@@ -21,11 +23,14 @@ type Props = {
     title: 'Portfolio'
   };
 
+//   const { slug } = await props.params;
+//   const blog =  await getBlogBySlug(slug);
+//   const blogHTML = blog ? await getBlogBySlugWithMarkdown(slug) : null;
 
-const PortfolioDetail = async ({ params }: Props) => {
-    const { slug } = await params;
-    const portfolio: Portfolio | null = await getPortfolioBySlug(slug);
-    const blogHTML = portfolio ? await getPorfolioBySlugWithMarkdown(slug) : null;
+const PortfolioDetail = async (props: { params: Params }) => {
+    const { slug } = await props.params;
+    const portfolio = await getPortfolioBySlug(slug);
+    const portfolioHTML = portfolio ? await getPorfolioBySlugWithMarkdown(slug) : null;
 
     if (portfolio) {
         metadata.title = portfolio.title;
@@ -79,7 +84,7 @@ const PortfolioDetail = async ({ params }: Props) => {
                             <h2 className="text-sm font-bold text-gray-900">Details</h2>
                             <div className="mt-4 space-y-6">
                                 <article className="text-sm text-gray-600">
-                                    <div dangerouslySetInnerHTML={{ __html: blogHTML?.content || '' }} />
+                                    <div dangerouslySetInnerHTML={{ __html: portfolioHTML?.content || '' }} />
                                 </article>
                             </div>
                         </div>
