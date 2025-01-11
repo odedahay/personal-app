@@ -30,6 +30,12 @@
     "category": "blogs"
   },
   {
+    "slug": "my-portfolio-design",
+    "title": "Fullstack Developer",
+    "description": "Working as Designer, Front-end Developer and Back-end Developer",
+    "category": "portfolios"
+  },
+  {
     "slug": "software-engineer-siemens",
     "title": "Software Engineer Siemens",
     "description": "Working as C++ and C# software engineer",

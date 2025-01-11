@@ -10,22 +10,10 @@ import { getPorfolioBySlugWithMarkdown, getPortfolioBySlug } from '@/lib/portfol
 // };
 
 type Params = Promise<{ slug: string}>
-
-// Dynamically generate static paths
-// export const generateStaticParams = async () => {
-//     const slugs: string[] = await getBlogsSlug();
-//     return slugs.map((slug) => ({
-//       slug,
-//     }));
-//   };
   
   export const metadata: Metadata = {
     title: 'Portfolio'
   };
-
-//   const { slug } = await props.params;
-//   const blog =  await getBlogBySlug(slug);
-//   const blogHTML = blog ? await getBlogBySlugWithMarkdown(slug) : null;
 
 const PortfolioDetail = async (props: { params: Params }) => {
     const { slug } = await props.params;
@@ -37,12 +25,11 @@ const PortfolioDetail = async (props: { params: Params }) => {
       } else {
         return (
           <PageLayout>
-            <div className="text-center mt-10 text-xl">Blog not found.</div>
+            <div className="text-center mt-10 text-xl">Portfolio not found.</div>
           </PageLayout>
         );
       }
     
-
     return (
         <PageLayout>
             <div className="pt-1">
