@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   // const blog: Blog | null = await getBlogBySlug(slug);
   // const blogHTML = blog? await getBlogBySlugWithMarkdown(slug): null;
   
-const BlogDetail = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = await params;
-  const blog = await getBlogBySlug(slug);
-  const blogHTML = await getBlogBySlugWithMarkdown(slug);
+const BlogDetail = async ({ params }:any) => {
+  // const { slug } = await params;
+  const blog = await getBlogBySlug(params.slug);
+  const blogHTML = await getBlogBySlugWithMarkdown(params.slug);
 
   if (blog) {
     metadata.title = blog.title;
