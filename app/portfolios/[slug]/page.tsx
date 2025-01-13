@@ -11,18 +11,9 @@ import { getPorfolioBySlugWithMarkdown, getPortfolioBySlug } from '@/lib/portfol
 
 type Params = Promise<{ slug: string}>
 
-// Dynamically generate static paths
-// export const generateStaticParams = async () => {
-//     const slugs: string[] = await getBlogsSlug();
-//     return slugs.map((slug) => ({
-//       slug,
-//     }));
-//   };
-  
 export const metadata: Metadata = {
     title: 'Portfolio'
   };
-
 
 const PortfolioDetail = async (props: { params: Params }) => {
     const { slug } = await props.params;

@@ -6,7 +6,7 @@ import { BlogHeader } from '@/components/blogs';
 import { PageLayout } from '@/components/layouts';
 
 // type Props = {params: { slug: string }; };
-type Params = Promise<{ slug: string }>
+// type Params = Promise<{ slug: string }>
 
 // Dynamically generate static paths
 // export const generateStaticParams = async () => {
@@ -20,8 +20,13 @@ export const metadata: Metadata = {
   title: 'Blog'
 };
 
-const BlogDetail = async (props: { params: Params }) => {
-  const { slug } = await props.params;
+// const BlogDetail = async (props: { params: Params }) => {
+  // const { slug } = await props.params;
+  // const blog: Blog | null = await getBlogBySlug(slug);
+  // const blogHTML = blog? await getBlogBySlugWithMarkdown(slug): null;
+  
+const BlogDetail = async ({ params }: { params: { slug: string } }) => {
+  const { slug } = await params;
   const blog = await getBlogBySlug(slug);
   const blogHTML = await getBlogBySlugWithMarkdown(slug);
 
