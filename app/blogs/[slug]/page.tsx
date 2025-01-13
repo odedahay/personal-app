@@ -8,14 +8,6 @@ import { PageLayout } from '@/components/layouts';
 // type Props = {params: { slug: string }; };
 type Params = Promise<{ slug: string }>
 
-// Dynamically generate static paths
-// export const generateStaticParams = async () => {
-//   const slugs: string[] = await getBlogsSlug();
-//   return slugs.map((slug) => ({
-//     slug,
-//   }));
-// };
-
 export const metadata: Metadata = {
   title: 'Blog'
 };
