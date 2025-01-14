@@ -21,7 +21,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 };
 
 const BlogDetail = async ({ params }: Props) => {
-  const { slug } = await params;
+  const { slug } = params;
   const blog: Blog | null = await getBlogBySlug(slug);
   const blogHTML = blog ? await getBlogBySlugWithMarkdown(slug) : null;
 
