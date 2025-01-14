@@ -1,25 +1,14 @@
-
 import { BlogList } from "@/components/blogs";
 import { PageLayout } from "@/components/layouts";
-import { getBlogs, getBlogsSlug } from "@/lib/blogs";
+import { getBlogs } from "@/lib/blogs";
 import Link from "next/link";
 
-type Params = Promise<{ category: string}>
+const BlogsPage = async ({ searchParams }: { searchParams: { category?: string } }) => {
+    // Get the selected category from searchParams
+    const selectedCategory = searchParams.category || "";
 
-// Pre-generate all static paths for blog slugs
-export const generateStaticParams = async () => {
-    const slugs: string[] = await getBlogsSlug(); // Ensure this function returns an array of valid slugs
-    return slugs.map((slug) => ({ slug })); // Returns array of params: [{ slug: 'example-slug' }]
-  };
-  
-
-const BlogsPage = async (props: { searchParams: Params}) => {
-    const { category } = await props.searchParams;
     // Fetch all blogs
     const blogs = await getBlogs();
-
-    // must await the selected category from searchParams
-    const selectedCategory = category || "";
 
     // Filter blogs based on the selected category
     const filteredBlogs = selectedCategory
@@ -41,8 +30,9 @@ const BlogsPage = async (props: { searchParams: Params}) => {
                     <li>
                         <Link
                             href="/blogs"
-                            className={`px-3 py-1 rounded-lg ${!selectedCategory ? "bg-blue-600 text-white" : "bg-gray-200"
-                                }`}
+                            className={`px-3 py-1 rounded-lg ${
+                                !selectedCategory ? "bg-blue-600 text-white" : "bg-gray-200"
+                            }`}
                         >
                             All
                         </Link>
@@ -53,8 +43,9 @@ const BlogsPage = async (props: { searchParams: Params}) => {
                         <li key={category}>
                             <Link
                                 href={`/blogs?category=${category}`}
-                                className={`px-3 py-1 rounded-lg ${selectedCategory === category ? "bg-blue-600 text-white" : "bg-gray-200"
-                                    }`}
+                                className={`px-3 py-1 rounded-lg ${
+                                    selectedCategory === category ? "bg-blue-600 text-white" : "bg-gray-200"
+                                }`}
                             >
                                 {category}
                             </Link>
