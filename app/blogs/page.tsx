@@ -3,15 +3,23 @@ import { PageLayout } from "@/components/layouts";
 import { getBlogs } from "@/lib/blogs";
 import Link from "next/link";
 
-// Define the type for the searchParams Promise
-type SearchParamsPromise = Promise<{ category?: string }>;
+// Generate static paths for all unique blog categories
+export const generateStaticParams = async () => {
+  // Fetch all blogs
+  const blogs = await getBlogs();
 
-const BlogsPage = async (props: { searchParams: SearchParamsPromise }) => {
-  // Wait for the searchParams Promise to resolve
-  const resolvedSearchParams = await props.searchParams;
+  // Extract unique categories
+  const categories = [...new Set(blogs.map((blog) => blog.category))];
 
-  // Extract the category (fallback to an empty string if undefined)
-  const selectedCategory = resolvedSearchParams.category || "";
+  // Return an array of paths for all categories (and the "All" filter for `/blogs`)
+  return categories.map((category) => ({ category })) || [{ category: "" }];
+};
+
+type SearchParams = { category?: string }; // Simplified type for searchParams
+
+const BlogsPage = async (props: { searchParams: SearchParams }) => {
+  // Extract category from searchParams
+  const selectedCategory = props.searchParams.category || "";
 
   // Fetch all blogs
   const blogs = await getBlogs();
