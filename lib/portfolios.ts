@@ -8,11 +8,25 @@ const PORTFOLIO_DIR = getDir("/content/portfolios");
 const getPortfoliosFileNames = () => {
   return getFileNames(PORTFOLIO_DIR);
 }
+
+
+const getPortfoliosSlug = async (): Promise<string[]> => {
+  try {
+    const fileNames = getPortfoliosFileNames();
+    return fileNames.map((filename) => filename.replace(/\.md$/, ''));
+  } catch (error) {
+    console.error('Error fetching blog slugs:', error);
+    return [];
+  }
+};
+
+
 const getPortfolio = (fileName: string): Portfolio => {
   const portfolio = getItemInPath(join(PORTFOLIO_DIR, fileName)) as Portfolio;
   portfolio.slug = fileName.replace(/\.md$/, "");
   return portfolio;
 }
+
 
 const getPortfolios = (): Portfolio[] => {
   const names = getPortfoliosFileNames();
@@ -39,4 +53,4 @@ const getPorfolioBySlugWithMarkdown = async (slug: string): Promise<Portfolio | 
   return portfolio;
 }
 
-export { getPortfolios, getPorfolioBySlugWithMarkdown, getPortfolioBySlug };
+export { getPortfolios, getPorfolioBySlugWithMarkdown, getPortfolioBySlug, getPortfoliosSlug };

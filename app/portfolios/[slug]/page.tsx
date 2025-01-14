@@ -3,9 +3,16 @@ import Image from "next/image";
 
 import { PageLayout } from '@/components/layouts';
 import { Portfolio } from '@/interfaces/Portfolio';
-import { getPorfolioBySlugWithMarkdown, getPortfolioBySlug } from '@/lib/portfolios';
+import { getPorfolioBySlugWithMarkdown, getPortfolioBySlug, getPortfoliosSlug } from '@/lib/portfolios';
 
 type Params = Promise<{ slug: string}>
+
+// Pre-generate all static paths for blog slugs
+export const generateStaticParams = async () => {
+    const slugs: string[] = await getPortfoliosSlug(); // Ensure this function returns an array of valid slugs
+    return slugs.map((slug) => ({ slug })); // Returns array of params: [{ slug: 'example-slug' }]
+  };
+  
 
 export const metadata: Metadata = {
     title: 'Portfolio'
