@@ -5,7 +5,7 @@ import { BlogHeader } from '@/components/blogs';
 import { PageLayout } from '@/components/layouts';
 
 // Correctly type `Props` for dynamic routes
-type Props = { params: { slug: string } };
+type Props = Promise<{ slug: string }>;
 
 // Pre-generate all static paths for blog slugs
 export const generateStaticParams = async () => {
@@ -14,16 +14,17 @@ export const generateStaticParams = async () => {
 };
 
 // Dynamically generate metadata for each blog
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-  const blog = await getBlogBySlug(params.slug); // Fetch the blog by slug
+export const generateMetadata = async (props: { params: Props }): Promise<Metadata> => {
+  const { slug } = await props.params;
+  const blog = await getBlogBySlug(slug); // Fetch the blog by slug
   return {
     title: blog ? blog.title : "Blog's page not found", // Dynamically set title
   };
 };
 
 // Blog detail page
-const BlogDetail = async ({ params }: Props) => {
-  const { slug } = params; // Destructure slug from params
+const BlogDetail = async (props: { params: Props }) => {
+  const { slug } = await props.params; // Destructure slug from params
   const blog: Blog | null = await getBlogBySlug(slug); // Fetch blog data by slug
   const blogHTML = blog ? await getBlogBySlugWithMarkdown(slug) : null; // Fetch blog HTML content
 
