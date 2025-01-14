@@ -3,16 +3,15 @@ import { PageLayout } from "@/components/layouts";
 import { getBlogs } from "@/lib/blogs";
 import Link from "next/link";
 
-// interface BlogsPageProps {
-//   searchParams: { category?: string }; // Define searchParams as a plain object
-// }
+// Define the type for the searchParams Promise
+type SearchParamsPromise = Promise<{ category?: string }>;
 
-type SearchParams = Promise<{ category: string}>
+const BlogsPage = async (props: { searchParams: SearchParamsPromise }) => {
+  // Wait for the searchParams Promise to resolve
+  const resolvedSearchParams = await props.searchParams;
 
-// const BlogsPage = async ({ searchParams }: BlogsPageProps) => {
-const BlogsPage = async (props: { searchParams : SearchParams}) => {
-  // Extract category from searchParams (fallback to an empty string if undefined)
-  const selectedCategory = (await props.searchParams).category || "";
+  // Extract the category (fallback to an empty string if undefined)
+  const selectedCategory = resolvedSearchParams.category || "";
 
   // Fetch all blogs
   const blogs = await getBlogs();
