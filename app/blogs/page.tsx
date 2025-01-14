@@ -1,11 +1,33 @@
+
 import { BlogList } from "@/components/blogs";
 import { PageLayout } from "@/components/layouts";
 import { getBlogs } from "@/lib/blogs";
 import Link from "next/link";
 
-const BlogsPage = async () => {
+type Params = Promise<{ category: string }>;
+
+export const generateStaticParams = async () => {
+  const blogs = await getBlogs();
+  const categories = [...new Set(blogs.map((blog) => blog.category))];
+
+  return categories.map((category) => ({
+    category,
+  }));
+};
+
+
+const BlogsPage = async (props: { searchParams: Params }) => {
+  const { category } = await props.searchParams;
   // Fetch all blogs
   const blogs = await getBlogs();
+
+  // must await the selected category from searchParams
+  const selectedCategory = category || "";
+
+  // Filter blogs based on the selected category
+  const filteredBlogs = selectedCategory
+    ? blogs.filter((blog) => blog.category === selectedCategory)
+    : blogs;
 
   // Extract unique categories for filtering
   const categories = [...new Set(blogs.map((blog) => blog.category))];
@@ -14,15 +36,16 @@ const BlogsPage = async () => {
     <PageLayout>
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">All Blogs</h2>
 
-      {/* Category List */}
+      {/* Category Filter Buttons */}
       <div className="mb-4">
-        <span className="font-semibold">Categories:</span>
-        <ul className="flex flex-wrap gap-4 mt-2">
-          {/* All Blogs */}
+        <span className="font-semibold">Filter by Category:</span>
+        <ul className="flex gap-2 mt-2">
+          {/* All Categories */}
           <li>
             <Link
               href="/blogs"
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+              className={`px-3 py-1 rounded-lg ${!selectedCategory ? "bg-blue-600 text-white" : "bg-gray-200"
+                }`}
             >
               All
             </Link>
@@ -32,8 +55,9 @@ const BlogsPage = async () => {
           {categories.map((category) => (
             <li key={category}>
               <Link
-                href={`/blogs/category/${category}`}
-                className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300"
+                href={`/blogs?category=${category}`}
+                className={`px-3 py-1 rounded-lg ${selectedCategory === category ? "bg-blue-600 text-white" : "bg-gray-200"
+                  }`}
               >
                 {category}
               </Link>
@@ -43,7 +67,7 @@ const BlogsPage = async () => {
       </div>
 
       {/* Blog List */}
-      <BlogList blogs={blogs} />
+      <BlogList blogs={filteredBlogs} />
     </PageLayout>
   );
 };
