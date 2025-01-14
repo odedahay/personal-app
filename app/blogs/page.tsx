@@ -1,16 +1,18 @@
 
 import { BlogList } from "@/components/blogs";
 import { PageLayout } from "@/components/layouts";
-import { getBlogs } from "@/lib/blogs";
+import { getBlogs, getBlogsSlug } from "@/lib/blogs";
 import Link from "next/link";
 
 type Params = Promise<{ category: string}>
 
-// const BlogsPage: NextPage = async () => {
-// const blogs = await getBlogs();
+// Pre-generate all static paths for blog slugs
+export const generateStaticParams = async () => {
+    const slugs: string[] = await getBlogsSlug(); // Ensure this function returns an array of valid slugs
+    return slugs.map((slug) => ({ slug })); // Returns array of params: [{ slug: 'example-slug' }]
+  };
+  
 
-// Mark the component as async to handle dynamic routing
-//const BlogsPage = async (props: { searchParams: Params}: { searchParams: { category?: string } }) => {
 const BlogsPage = async (props: { searchParams: Params}) => {
     const { category } = await props.searchParams;
     // Fetch all blogs
