@@ -5,10 +5,6 @@ import { PageLayout } from '@/components/layouts';
 import { Portfolio } from '@/interfaces/Portfolio';
 import { getPorfolioBySlugWithMarkdown, getPortfolioBySlug } from '@/lib/portfolios';
 
-// type Props = {
-//     params: { slug: string };
-// };
-
 type Params = Promise<{ slug: string}>
 
 export const metadata: Metadata = {
