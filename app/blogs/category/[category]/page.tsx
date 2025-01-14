@@ -1,6 +1,7 @@
 import { BlogList } from "@/components/blogs";
 import { PageLayout } from "@/components/layouts";
 import { getBlogs } from "@/lib/blogs";
+import Link from "next/link";
 
 // type Params = {
 //   params: { category: string };
@@ -29,7 +30,10 @@ const CategoryPage = async (props: { params : Params}) => {
   return (
     <PageLayout>
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-        Blogs in "{category}" Category
+        Blogs in "{category}" Category 
+        <Link href="/blogs" className='text-sm ml-1 text-indigo-600'>
+            (Back to All Blogs)
+        </Link>
       </h2>
 
       {/* Blog List */}
