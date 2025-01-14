@@ -15,11 +15,11 @@ export const generateStaticParams = async () => {
   return categories.map((category) => ({ category })) || [{ category: "" }];
 };
 
-type SearchParams = { category?: string }; // Simplified type for searchParams
+type SearchParams = Promise<{ category?: string }>; // Simplified type for searchParams
 
 const BlogsPage = async (props: { searchParams: SearchParams }) => {
   // Extract category from searchParams
-  const selectedCategory = props.searchParams.category || "";
+  const selectedCategory = (await props.searchParams).category || "";
 
   // Fetch all blogs
   const blogs = await getBlogs();
