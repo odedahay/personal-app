@@ -3,61 +3,67 @@ import { PageLayout } from "@/components/layouts";
 import { getBlogs } from "@/lib/blogs";
 import Link from "next/link";
 
-const BlogsPage = async ({ searchParams }: { searchParams: { category?: string } }) => {
-    // Get the selected category from searchParams
-    const selectedCategory = searchParams.category || "";
+interface BlogsPageProps {
+  searchParams: { category?: string }; // Define searchParams as a plain object
+}
 
-    // Fetch all blogs
-    const blogs = await getBlogs();
+// type Params = Promise<{ category: string}>
 
-    // Filter blogs based on the selected category
-    const filteredBlogs = selectedCategory
-        ? blogs.filter((blog) => blog.category === selectedCategory)
-        : blogs;
+const BlogsPage = async ({ searchParams }: BlogsPageProps) => {
+  // Extract category from searchParams (fallback to an empty string if undefined)
+  const selectedCategory = searchParams.category || "";
 
-    // Extract unique categories for filtering
-    const categories = [...new Set(blogs.map((blog) => blog.category))];
+  // Fetch all blogs
+  const blogs = await getBlogs();
 
-    return (
-        <PageLayout>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900">All Blogs</h2>
+  // Filter blogs based on the selected category
+  const filteredBlogs = selectedCategory
+    ? blogs.filter((blog) => blog.category === selectedCategory)
+    : blogs;
 
-            {/* Category Filter Buttons */}
-            <div className="mb-4">
-                <span className="font-semibold">Filter by Category:</span>
-                <ul className="flex gap-2 mt-2">
-                    {/* All Categories */}
-                    <li>
-                        <Link
-                            href="/blogs"
-                            className={`px-3 py-1 rounded-lg ${
-                                !selectedCategory ? "bg-blue-600 text-white" : "bg-gray-200"
-                            }`}
-                        >
-                            All
-                        </Link>
-                    </li>
+  // Extract unique categories for filtering
+  const categories = [...new Set(blogs.map((blog) => blog.category))];
 
-                    {/* Individual Categories */}
-                    {categories.map((category) => (
-                        <li key={category}>
-                            <Link
-                                href={`/blogs?category=${category}`}
-                                className={`px-3 py-1 rounded-lg ${
-                                    selectedCategory === category ? "bg-blue-600 text-white" : "bg-gray-200"
-                                }`}
-                            >
-                                {category}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+  return (
+    <PageLayout>
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900">All Blogs</h2>
 
-            {/* Blog List */}
-            <BlogList blogs={filteredBlogs} />
-        </PageLayout>
-    );
+      {/* Category Filter Buttons */}
+      <div className="mb-4">
+        <span className="font-semibold">Filter by Category:</span>
+        <ul className="flex gap-2 mt-2">
+          {/* All Categories */}
+          <li>
+            <Link
+              href="/blogs"
+              className={`px-3 py-1 rounded-lg ${
+                !selectedCategory ? "bg-blue-600 text-white" : "bg-gray-200"
+              }`}
+            >
+              All
+            </Link>
+          </li>
+
+          {/* Individual Categories */}
+          {categories.map((category) => (
+            <li key={category}>
+              <Link
+                href={`/blogs?category=${category}`}
+                className={`px-3 py-1 rounded-lg ${
+                  selectedCategory === category ? "bg-blue-600 text-white" : "bg-gray-200"
+                }`}
+              >
+                {category}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Blog List */}
+      <BlogList blogs={filteredBlogs} />
+    </PageLayout>
+  );
 };
 
 export default BlogsPage;
