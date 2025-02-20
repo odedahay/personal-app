@@ -31,7 +31,8 @@ const NavBar = () => {
                         <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                             <div className="flex w-full items-center justify-between md:w-auto">
                                 <Link href="/">
-                                    <p className="text-2xl font-bold tracking-tight text-gray-900">Rod Dahay</p>
+                                    {/* <p className="text-2xl font-bold tracking-tight text-gray-900">Rod Dahay</p> */}
+                                    <img className="h-10 w-auto" src="/images/roddahay-logo.svg" alt="Rod Dahay" />
 
                                 </Link>
                                 <div className="-mr-2 flex items-center md:hidden">
