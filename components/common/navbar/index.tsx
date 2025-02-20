@@ -14,7 +14,7 @@ const NavBar = () => {
     const pathname = usePathname()
     return (
         <>
-            <svg
+            {/* <svg
                 className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block"
                 fill="currentColor"
                 viewBox="0 0 100 100"
@@ -22,12 +22,12 @@ const NavBar = () => {
                 aria-hidden="true"
             >
                 <polygon points="50,0 100,0 50,100 0,100" />
-            </svg>
+            </svg> */}
 
             {/* NAVIGATION START */}
             <Popover>
-                <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
-                    <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+                <div className="max-w-7xl px-4 pt-6 sm:px-6 lg:px-8">
+                    <nav className="relative flex items-center justify-between sm:h-10 lg:justify-between" aria-label="Global">
                         <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                             <div className="flex w-full items-center justify-between md:w-auto">
                                 <Link href="/">
