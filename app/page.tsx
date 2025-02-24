@@ -27,7 +27,7 @@ const Home: NextPage = async () => {
     <BaseLayout>
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">
         Newest Blogs
-        <Link href="/blogs" className='text-sm ml-1 text-indigo-600'>
+        <Link href="/blogs" className='text-sm ml-1 text-pink-500'>
             (See All)
         </Link>
       </h2>
@@ -37,7 +37,7 @@ const Home: NextPage = async () => {
 
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">
         Portfolios
-        <Link href="/portfolios" className='text-sm ml-1 text-indigo-600'>
+        <Link href="/portfolios" className='text-sm ml-1 text-pink-500'>
             (See All)
         </Link>
       </h2>
