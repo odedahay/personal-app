@@ -12,17 +12,17 @@ const BlogsPage = async () => {
 
   return (
     <PageLayout>
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900">All Blogs</h2>
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-2">All Blogs</h2>
 
       {/* Category List */}
-      <div className="mb-4">
+      <div className="mb-12">
         <span className="font-semibold">Categories:</span>
         <ul className="flex flex-wrap gap-4 mt-2">
           {/* All Blogs */}
           <li>
             <Link
               href="/blogs"
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+              className="px-4 py-2 rounded-lg bg-pink-400 text-white hover:bg-pink-600"
             >
               All
             </Link>

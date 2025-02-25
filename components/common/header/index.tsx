@@ -16,14 +16,14 @@ const Header = () => {
                     <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                     I'm Rod Dahay, a passionate UI designer and developer. Dive into my portfolio to discover my work experience and explore insightful blogs on the latest in tech.</p>
                     
-                    <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-pink-400  hover:bg-pink-600 md:px-10 md:text-lg">
+                    <Link href="/portfolios" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-pink-400  hover:bg-pink-600 md:px-10 md:text-lg">
                         My Portfolio
-                    </a>
+                    </Link>
                  
 
-                    <a href="#" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                        My Contact
-                    </a>
+                    </Link>
                 </div>
                 <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
                     <Image

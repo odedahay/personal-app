@@ -20,7 +20,6 @@ const NavBar = () => {
                         <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                             <div className="flex w-full items-center justify-between md:w-auto">
                                 <Link href="/">
-                                    {/* <p className="text-2xl font-bold tracking-tight text-gray-900">Rod Dahay</p> */}
                                     <img className="h-10 w-auto" src="/images/roddahay-logo.svg" alt="Rod Dahay" />
 
                                 </Link>
@@ -68,9 +67,9 @@ const NavBar = () => {
                         className="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden"
                     >
                         <div className="rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
-                            <div className="flex items-center justify-between px-5 pt-4">
-                                <div>
-                                    <p className="text-2xl font-bold tracking-tight text-gray-900">Rod Dahay</p>
+                            <div className="flex items-center justify-between px-4 pt-4">
+                                <div className='pb-7'>
+                                    <img className="h-10 w-auto" src="/images/roddahay-logo.svg" alt="Rod Dahay" />
                                 </div>
                                 <div className="-mr-2">
                                     <PopoverButton className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -79,9 +78,9 @@ const NavBar = () => {
                                     </PopoverButton>
                                 </div>
                             </div>
-                            <div className="space-y-1 px-2 pt-2 pb-3">
+                            <div className="space-y-1 px-5 pt-6 pb-3">
                                 {navigation.map((item) => (
-                                    <Link key={item.name} href={item.href} className={`-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 
+                                    <Link key={item.name} href={item.href} className={`-m-3 mb-4 flex items-center rounded-md p-3 hover:bg-gray-50 
                                         ${pathname?.startsWith(item.href) ? 
                                             "bg-pink-400 text-white" : 
                                             "text-gray-900"}`}>
@@ -90,7 +89,7 @@ const NavBar = () => {
                                     </Link>
                                 ))}
                             </div>
-                            <div className="px-4 pb-5 mb-5">
+                            <div className="px-4 pb-8 mb-8 pt-4">
                                 <ContentSearch />
                             </div>
                         </div>

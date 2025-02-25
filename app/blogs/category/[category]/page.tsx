@@ -31,7 +31,7 @@ const CategoryPage = async (props: { params : Params}) => {
     <PageLayout>
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">
         Blogs in "{category}" Category 
-        <Link href="/blogs" className='text-sm ml-1 text-indigo-600'>
+        <Link href="/blogs" className='text-sm ml-1 text-pink-400'>
             (Back to All Blogs)
         </Link>
       </h2>

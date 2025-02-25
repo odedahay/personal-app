@@ -40,7 +40,7 @@ const BlogDetail = async (props: { params: Props }) => {
   // Render the blog content
   return (
     <PageLayout>
-      <div className="w-2/3 m-auto">
+      <div className="w-md m-auto md:w-4/5">
         <BlogHeader blog={blog} />
         <article className="prose lg:prose-lg markdown-image-50">
           {/* Render blog content as HTML */}
