@@ -1,4 +1,3 @@
-
 import { join } from "path";
 import { Blog } from "@/interfaces/Blog";
 import { getAllItems, getDir, getFileNames, getItemInPath, markdownToHTML } from "./md";
@@ -71,6 +70,7 @@ const getBlogs = async (): Promise<Blog[]> => {
   try {
     const fileNames = getBlogFileNames();
     const blogs = fileNames.map((fileName) => getBlog(fileName));
+    blogs.sort((blog1, blog2) => new Date(blog2.date).getTime() - new Date(blog1.date).getTime());
     return blogs;
   } catch (error) {
     console.error('Error fetching blogs:', error);
