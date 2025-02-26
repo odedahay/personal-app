@@ -42,7 +42,7 @@ const BlogDetail = async (props: { params: Props }) => {
     <PageLayout>
       <div className="w-md m-auto md:w-4/5">
         <BlogHeader blog={blog} />
-        <article className="prose lg:prose-lg markdown-image-50">
+        <article className="prose lg:prose-lg markdown-image-50_ max-w-full">
           {/* Render blog content as HTML */}
           <div dangerouslySetInnerHTML={{ __html: blogHTML?.content || '' }} />
         </article>

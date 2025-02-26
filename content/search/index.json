@@ -1,7 +1,7 @@
 [
   {
     "slug": "markdown-full-example",
-    "title": "Updated: Markdown Extensive Example",
+    "title": "Markdown Extensive Example",
     "description": "Learn how to write markdown",
     "category": "blogs"
   },
@@ -15,6 +15,18 @@
     "slug": "rust-webassembly-with-js-ts-the-practical-guide",
     "title": "Rust & WebAssembly with JS (TS) - The Practical Guide",
     "description": "Learn how to code in Rust! Compile the code to WebAssembly, prepare JS/TS frontend and finish the course by creating the practical Snake game that can run in any browser.",
+    "category": "blogs"
+  },
+  {
+    "slug": "the-silent-struggle-inspired-by-christophe-chaboute",
+    "title": "The Silent Struggle - Inspired by Christophe Chabouté.",
+    "description": "For this piece, I sketched and inked everything directly in Photoshop.",
+    "category": "blogs"
+  },
+  {
+    "slug": "the-starry-night-in-calgary",
+    "title": "The Starry Night in Calgary",
+    "description": "It is inspired by Van Gogh’s iconic painting, Starry Night, reimagined in the context of Calgary.",
     "category": "blogs"
   },
   {

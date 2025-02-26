@@ -2,24 +2,24 @@ import Link from "next/link";
 import { navigation } from "../navbar/navigation";
 
 const socialLinks = [
-    {
-        name: 'Facebook',
-        href: 'https://www.facebook.com/odedahay',
-        icon: (props: any) => (
-            <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-                <path
-                    fillRule="evenodd"
-                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                    clipRule="evenodd"
-                />
-            </svg>
-        ),
-    },
+    // {
+    //     name: 'Facebook',
+    //     href: 'https://www.facebook.com/odedahay',
+    //     icon: (props: any) => (
+    //         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+    //             <path
+    //                 fillRule="evenodd"
+    //                 d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+    //                 clipRule="evenodd"
+    //             />
+    //         </svg>
+    //     ),
+    // },
     {
         name: 'Instagram',
         href: 'https://www.instagram.com/odedahay/',
         icon: (props: any) => (
-            <svg fill="currentColor" viewBox="0 0 55 55" {...props}>
+            <svg fill="currentColor" viewBox="0 0 50 50" {...props}>
                 <path
                     d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"
                 />

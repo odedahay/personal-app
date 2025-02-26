@@ -4,7 +4,7 @@ description: Learn how to use React / Next JS, Solidity, and Pinata(IPFS) to cre
 author: Rod Dahay
 authorImage: https://thrangra.sirv.com/Ethereum_blue_light-small.jpg
 coverImage: https://thrangra.sirv.com/Ethereum_blue_light-small.jpg
-date: "2022-04-25"
+date: "2025-01-21"
 category: 'Tech'
 ---
 
