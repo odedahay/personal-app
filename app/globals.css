@@ -31,6 +31,15 @@ body {
   min-height: calc(100vh - 232px);
 }
 
+.markdown-image-75 img {
+  max-width: 75%;
+  margin: auto;
+}
+
+.markdown-image-60 img {
+  max-width: 70%;
+  margin: auto;
+}
 
 /* .bg-blue-600 {
   background-color: #2563eb;

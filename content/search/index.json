@@ -42,6 +42,12 @@
     "category": "blogs"
   },
   {
+    "slug": "eob-systems-integrator-application",
+    "title": "EOB Systems Integrator Inc",
+    "description": "The EOB website was designed to provide users with a comprehensive overview of their products, ranging from complex system setups to simple installations using the correct devices",
+    "category": "portfolios"
+  },
+  {
     "slug": "my-portfolio-design",
     "title": "Fullstack Developer",
     "description": "Working as Designer, Front-end Developer and Back-end Developer",
