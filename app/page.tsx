@@ -19,9 +19,15 @@ const Home: NextPage = async () => {
 
   saveSearchData(content);
 
-  // Limit to 4 blogs and 4 portfolios
+  // Limit to 4 blogs
   const limitedBlogs = blogs.slice(0, 4);
-  const limitedPortfolios = portfolios.slice(0, 4);
+
+  // Filter portfolios from blogs based on category "Portfolio"
+  const portfolioBlogs = blogs.filter(blog => blog.category === "Portfolio");
+
+  // Limit to 4 portfolios
+  // const limitedPortfolios = portfolios.slice(0, 4);
+  const limitedPortfolios = portfolioBlogs.slice(0, 4);
 
   return (
     <BaseLayout>
@@ -37,11 +43,12 @@ const Home: NextPage = async () => {
 
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">
         Portfolios
-        <Link href="/portfolios" className='text-sm ml-1 text-pink-500'>
+        <Link href="/blogs/category/Portfolio" className='text-sm ml-1 text-pink-500'>
             (See All)
         </Link>
       </h2>
-      <PortfolioList portfolios={limitedPortfolios} />
+      {/* <PortfolioList portfolios={limitedPortfolios} /> */}
+      <BlogList blogs={limitedPortfolios} />
     </BaseLayout>
   )
 }

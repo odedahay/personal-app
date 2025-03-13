@@ -1,5 +1,11 @@
 [
   {
+    "slug": "the-calgary-library-perspective",
+    "title": "Exploring Perspective Design at the Calgary Public Library",
+    "description": "Understanding and executing perspective, helps designers refine their craft and make them better artists and designers.",
+    "category": "blogs"
+  },
+  {
     "slug": "the-silent-struggle-inspired-by-christophe-chaboute",
     "title": "The Silent Struggle - Inspired by Christophe Chabouté.",
     "description": "For this piece, I sketched and inked everything directly in Photoshop.",
@@ -21,6 +27,12 @@
     "slug": "nft-marketplace-in-react-js-next-typescript-full-guide",
     "title": "NFT Marketplace in React, Typescript & Solidity - Full Guide",
     "description": "Learn how to use React / Next JS, Solidity, and Pinata(IPFS) to create NFT marketplace on Ethereum. All In Typescript.",
+    "category": "blogs"
+  },
+  {
+    "slug": "eob-systems-integrator-application",
+    "title": "EOB Systems Integrator Inc",
+    "description": "The EOB website was designed to provide users with a comprehensive overview of their products, ranging from complex system setups to simple installations using the correct devices",
     "category": "blogs"
   },
   {
@@ -49,7 +61,7 @@
   },
   {
     "slug": "my-portfolio-design",
-    "title": "Fullstack Developer",
+    "title": "How I develop my",
     "description": "Working as Designer, Front-end Developer and Back-end Developer",
     "category": "portfolios"
   },

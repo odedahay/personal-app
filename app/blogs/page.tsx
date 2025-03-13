@@ -10,6 +10,12 @@ const BlogsPage = async () => {
   // Extract unique categories for filtering
   const categories = [...new Set(blogs.map((blog) => blog.category))];
 
+  // Define the custom order of categories
+  const customOrder = ['Design', 'Portfolio', 'Tech', 'Others'];
+
+  // Sort categories based on the custom order
+  const sortedCategories = categories.sort((a, b) => customOrder.indexOf(a) - customOrder.indexOf(b));
+
   return (
     <PageLayout>
       <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-2">All Blogs</h2>
@@ -29,7 +35,8 @@ const BlogsPage = async () => {
           </li>
 
           {/* Individual Categories */}
-          {categories.map((category) => (
+          {/* {categories.map((category) => ( */}
+          {sortedCategories.map((category) => (
             <li key={category}>
               <Link
                 href={`/blogs/category/${category}`}

@@ -5,7 +5,7 @@ author: Rod Dahay
 authorImage: https://thrangra.sirv.com/Final_Unity_2D_Small.jpg
 coverImage: https://thrangra.sirv.com/Final_Unity_2D_Small.jpg
 date: "2022-01-25"
-category: 'Design'
+category: 'Tech'
 ---
 
 **What is Unity?**

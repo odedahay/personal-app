@@ -5,7 +5,7 @@ author: Rod Dahay
 authorImage: https://thrangra.sirv.com/Rust_small.jpg
 coverImage: https://thrangra.sirv.com/Rust_small.jpg
 date: "2022-03-25"
-category: 'Design'
+category: 'Tech'
 ---
 
 **What is Rust?**
