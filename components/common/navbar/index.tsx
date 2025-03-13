@@ -37,8 +37,7 @@ const NavBar = () => {
                                 key={item.name} 
                                 href={item.href} 
                                 className={`px-3 py-2 rounded-md text-lg font-medium ${
-                                    // pathname?.startsWith(item.href)
-                                    pathname === item.href
+                                    pathname?.startsWith(item.href)
                                       ? "bg-pink-400 text-white"
                                       : "text-gray-900 hover:bg-gray-200"
                                   }`}
@@ -82,7 +81,7 @@ const NavBar = () => {
                             <div className="space-y-1 px-5 pt-6 pb-3">
                                 {navigation.map((item) => (
                                     <Link key={item.name} href={item.href} className={`-m-3 mb-4 flex items-center rounded-md p-3 hover:bg-gray-50 
-                                        ${pathname === item.href ? 
+                                        ${pathname?.startsWith(item.href) ? 
                                             "bg-pink-400 text-white" : 
                                             "text-gray-900"}`}>
                                         

@@ -2,6 +2,7 @@ import { BlogList } from "@/components/blogs";
 import { PageLayout } from "@/components/layouts";
 import { getBlogs } from "@/lib/blogs";
 import Link from "next/link";
+import CategoryList from "@/components/blogs/CategoryList";
 
 // type Params = {
 //   params: { category: string };
@@ -27,13 +28,18 @@ const CategoryPage = async (props: { params : Params}) => {
   // Filter blogs by category
   const filteredBlogs = blogs.filter((blog) => blog.category === category);
 
+  // Extract unique categories for filtering
+  const categories = [...new Set(blogs.map((blog) => blog.category))];
+
   return (
     <PageLayout>
+       <CategoryList categories={categories} />
+
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">
         Blogs in "{category}" Category 
-        <Link href="/blogs" className='text-sm ml-1 text-pink-400'>
+        {/* <Link href="/blogs" className='text-sm ml-1 text-pink-400'>
             (Back to All Blogs)
-        </Link>
+        </Link> */}
       </h2>
 
       {/* Blog List */}
