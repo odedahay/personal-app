@@ -5,7 +5,7 @@
 This website portfolio [roddahay.netlify.ap](https://roddahay.netlify.app/), built using [Next.js](https://nextjs.org) and deployed in [www.netlify.com](https://www.netlify.com/).
 
 <img src="/images/screenshot.jpg" />
-
+![digital logo](/images/porfolio/prairie/prairie-digital.jpg)
 
 ### Getting Started
 
@@ -33,7 +33,9 @@ To learn more about Next.js, take a look at the following resources:
 My website portfolio [odedahay.github.io](https://odedahay.github.io/), built previously using [https://jekyllrb.com/](https://jekyllrb.com/) Markdown, Liquid, HTML, and CSS go in, and static sites come out ready for deployment.
 
 
-<img src="/images/odedahay-github-io-v2.jpg" />
+<img src="/images/odedahay-github-io.jpg" />
+
+
 
 
 
