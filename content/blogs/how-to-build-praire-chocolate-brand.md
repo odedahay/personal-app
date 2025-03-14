@@ -8,16 +8,15 @@ date: "2025-02-11"
 category: 'Portfolio'
 ---
 
+### Project Overview: 
 
-**Project Overview:**
-
-### Prairie Chocolate Co. Branding
+**Prairie Chocolate Co. Branding**
 
 Prairie Chocolate Co. is ready to launch their first ne w product
 and are looking for a new direction in their visual identity (they
 currently have don’t have any visual identity or branding).
 
-**Project Scope:**
+**Project Scope**
 + Want to develop a visual identity to include in developing
 new areas of business.
 + Begins with developing a color scheme that is “bright and

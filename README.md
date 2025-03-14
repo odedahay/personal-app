@@ -5,7 +5,6 @@
 This website portfolio [roddahay.netlify.ap](https://roddahay.netlify.app/), built using [Next.js](https://nextjs.org) and deployed in [www.netlify.com](https://www.netlify.com/).
 
 <img src="/images/screenshot.jpg" />
-![digital logo](/images/porfolio/prairie/prairie-digital.jpg)
 
 ### Getting Started
 

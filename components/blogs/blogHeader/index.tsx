@@ -41,15 +41,14 @@ const BlogHeader: React.FC<Props> = ({ blog }) => {
                 </div>
               </div>
             </div>
-            <div className="flex self-end">
-              {/* Social Links Here */}
-            </div>
           </div>
-          <h2 className="blog-detail-header-subtitle mb-2 text-xl text-gray-600 mb-5">
+          <h3 className="blog-detail-header-subtitle text-xl italic text-gray-600 mb-5">
             {blog.description}
-          </h2>
+          </h3>
+
+          <div className="border-t-2 bg-gray-100 my-10"></div>
           
-          <div className="h-96 bg-black mx-auto w-full relative">
+          {/* <div className="h-96 bg-black mx-auto w-full relative">
             <Image
               priority
               fill
@@ -58,7 +57,7 @@ const BlogHeader: React.FC<Props> = ({ blog }) => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               
-          </div>
+          </div> */}
         </div>
     );
 }
