@@ -17,8 +17,8 @@ const Header = () => {
                     I'm Rod Dahay, a passionate UI designer and developer. Dive into my portfolio to discover my work experience and explore insightful blogs on the latest in tech.</p>
                     
                     <Link href="https://odedahay.github.io/assets/rodelio_dahay_portfolio.pdf" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-pink-400  hover:bg-pink-600 md:px-10 
-                    md:text-lg">
-                        My Old Portfolio
+                    md:text-lg" target="_blank">
+                        View My Old Portfolio
                     </Link>
                  
 
