@@ -47,7 +47,7 @@ const Home: NextPage = async () => {
               (See All)
           </Link>
         </h2>
-        <Link href="/blogs/category/Portfolio" className='text-pink-500 rounded hover:text-white px-3 py-[5px] hover:bg-pink-700 text-sm font-bold '>
+        <Link href="https://odedahay.github.io/assets/rodelio_dahay_portfolio.pdf" className='text-pink-500 rounded hover:text-white px-3 py-[5px] hover:bg-pink-700 text-sm font-bold '>
               View My Old Portfolio
           </Link>
       </div>
