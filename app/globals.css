@@ -34,6 +34,9 @@ body {
 .markdown-image-75 img {
   max-width: 75%;
   margin: auto;
+  @media(max-width:768px){
+    max-width:100%;
+  }
 }
 
 .markdown-image-60 img {

@@ -7,7 +7,8 @@ type Props = {
     blog: Blog
 }
 
-const BlogHeader: React.FC<Props> = ({ blog }) => {
+//const BlogHeader: React.FC<Props> = ({ blog }) => {
+const BlogHeader = ({ blog }: Props) => {
     return (
         <div className="blog-detail-header">
           

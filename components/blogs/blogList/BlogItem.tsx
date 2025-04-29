@@ -8,7 +8,8 @@ type Props = {
     blog: Blog
 }
 
-export const BlogItem:React.FC<Props> = ({ blog }) => {
+export const BlogItem = ({blog}: Props)=> {
+//export const BlogItem:React.FC<Props> = ({ blog }) => {
     return (
         <div key={blog.slug} className="group">
             <div className="h-80 aspect-w-1 aspect-h-1 w-full rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-40">

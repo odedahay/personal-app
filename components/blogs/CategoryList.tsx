@@ -6,7 +6,8 @@ type Props = {
   categories: string[];
 };
 
-const CategoryList: React.FC<Props> = ({ categories }) => {
+const CategoryList = ({categories}: Props) =>{
+//const CategoryList: React.FC<Props> = ({ categories }) => {
   const pathname = usePathname();
 
   // Define the custom order of categories

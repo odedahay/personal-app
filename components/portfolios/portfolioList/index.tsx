@@ -14,8 +14,9 @@ import { PortfolioItem } from '../portfolioList/PortfolioItem';
 type Props = {
     portfolios: Portfolio[]
 }
-
-const PortfolioList: React.FC<Props> = ({ portfolios }) => {
+// const App = ({ message }: AppProps)
+// const PortfolioList: React.FC<Props> = ({ portfolios }) => {
+const PortfolioList = ({portfolios}: Props) => {
     return (
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {portfolios.map((portfolio) => (
