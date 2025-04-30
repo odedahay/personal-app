@@ -2,8 +2,8 @@
 title: Redesigning Tinkerbox Website - Creating an Engaging Yet Informative Digital Experience
 description: A daycare website for Child Development Centre offers basic information, its plain yellow design and minimal structure make critical details difficult to find. 
 author: Rod Dahay
-authorImage: /images/porfolio/eob-layout-thumb.jpg
-coverImage: /images/porfolio/eob-layout-thumb.jpg
+authorImage: /images/portfolio/tinkerbox-thumb.jpg
+coverImage: /images/portfolio/tinkerbox-thumb.jpg
 date: "2025-04-09"
 category: 'Portfolio'
 ---
