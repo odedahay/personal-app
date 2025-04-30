@@ -84,13 +84,14 @@ Visual elements include:
 - Interactive buttons for cohesion
 
 
-
 **Website Design**
 
 The color palette evokes calm happiness, reinforcing the daycare’s nurturing environment. This mood board synthesizes all components—typography, imagery, icons, and colors—into a cohesive style tile to guide the website’s design.
 
-![Design](/images/portfolio/tinkerbox-design01.jpg)
-![Design](/images/portfolio/tinkerbox-design02.jpg)
+![Homepage Design](/images/portfolio/tinkerbox-design01.jpg)
+![Inner pages](/images/portfolio/tinkerbox-design02.jpg)
+![Sample List of Design](/images/portfolio/tinkerbox-design03.jpg)
+![Full website](/images/portfolio/tinkerbox-design04.jpg)
 
 
 
