@@ -22,13 +22,10 @@ For exact sculpture locations, visit: Trees Sculptures - https://www.gpsmycity.c
 
 Initially, I wanted to show the tree here because—I'll be honest—when I sketched it, I felt really confused. I redrew it many times, over and over, trying to understand how the branches split from single to double as they grew upward. I really love these details!
 
-![Black and White Artwork](/images/portfolio/dahay-rod-tree-perspective-sketch.jpg "Perspective Drawing in Black and White")
-
-
 **Digital Rendering in Adobe Illustrator**
 
 I used Adobe Illustrator to digitize my sketch. Enjoy!
 
-![Black and White Artwork](/images/portfolio/dahay-rod-tree-perspective-digital.jpg "Perspective Drawing in Black and White (Digital)")
 
+![Black and White Artwork](/images/portfolio/dahay-rod-tree-perspective-digital-v2.jpg "Perspective Drawing in Black and White (Digital)")
 

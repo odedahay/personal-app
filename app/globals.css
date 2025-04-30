@@ -44,6 +44,14 @@ body {
   margin: auto;
 }
 
+.markdown-image-80 img {
+  max-width: 100%;
+  margin: auto;
+  @media(max-width:768px){
+    max-width:100%;
+  }
+}
+
 /* .bg-blue-600 {
   background-color: #2563eb;
 }
