@@ -1,5 +1,17 @@
 [
   {
+    "slug": "empanadas-ilegales-poster",
+    "title": "Empanadas Ilegales",
+    "description": "Empanadas Ilegales is a dynamic Latin American band based in Montreal, Canada, known for their energetic fusion of cumbia, punk, ska, and rock.",
+    "category": "blogs"
+  },
+  {
+    "slug": "global-water-projects-webdesign",
+    "title": "Global Water Projects - Bringing Life-Giving Water to the Developing World",
+    "description": "Global Water Projects (GWP) is a nonprofit organization dedicated to solving water scarcity in developing regions of Central America and the African peninsula.",
+    "category": "blogs"
+  },
+  {
     "slug": "daycare-website",
     "title": "Redesigning Tinkerbox Website - Creating an Engaging Yet Informative Digital Experience",
     "description": "A daycare website for Child Development Centre offers basic information, its plain yellow design and minimal structure make critical details difficult to find.",
