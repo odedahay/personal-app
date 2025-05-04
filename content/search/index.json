@@ -48,6 +48,12 @@
     "category": "blogs"
   },
   {
+    "slug": "marketing-edm",
+    "title": "HTML Email Design & Development",
+    "description": "As part of the marketing team at Samsung SDS, I owned the end-to-end creation of responsive email campaigns",
+    "category": "blogs"
+  },
+  {
     "slug": "web-development-and-coding-full-course",
     "title": "Web Development & Code 101 - Full Guide [2024]",
     "description": "Learn programming in JS language, HTML, and CSS. Create a Web Application made in React JS. The path to the final project includes many assignments, code exercises, and challenges.",
