@@ -36,35 +36,71 @@ const About = () => {
               {/* <h3 className="sr-only">Description</h3> */}
               <div className="space-y-6">
                 <p className="text-base text-gray-900">
-                  I’m a UI designer and developer passionate about crafting websites and creating interactive, user-friendly designs that leave a lasting impression.
+                  I'm a UI designer and developer passionate about crafting websites and creating interactive, user-friendly designs that leave a lasting impression.
                 </p>
               </div>
             </div>
-            <div className="mt-10">
-              <h3 className="text-sm font-bold text-gray-900">Skillfully trained through experience in multiple agencies, I specialize in:
+            <div className="mt-5">
+              <h3 className="text-md font-bold text-gray-900">Core Expertise:
 
               </h3>
-              <div className="mt-4">
+              <div className="mt-4 pl-2">
+                <p className="font-bold text-sm mb-2">HTML Email Mastery</p>
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">UI Designing: Crafting intuitive and visually appealing user interfaces.</span></li>
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">Developing WordPress Themes: Building custom, responsive, and dynamic WordPress themes.</span></li>
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">Developing Applications: Expertise in Django, Angular, Next.js, and CSS for creating robust and scalable web applications.</span></li>
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">CMS Management/Development: Proficient in managing and developing content management systems for seamless user experiences.</span>
+                
+                  <li className="text-black">
+                    <span>Designed 200+ responsive email campaigns with 95%+ inbox render accuracy</span>
                   </li>
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">Photography: Capturing compelling visuals to enhance storytelling and design.</span></li>
-
-                  <li className="text-gray-400">
-                    <span className="text-gray-600">Pyrography: Creating unique, handcrafted designs through wood-burning art.</span>
+                  <li className="text-black">
+                    <span>Developed bulletproof templates for Salesforce Marketing Cloud/ExactTarget and Adobe Experience Manager</span>
                   </li>
                 </ul>
               </div>
+              <div className="mt-4 pl-2">
+                <p className="font-bold text-sm mb-2">UI/UX & Web Design</p>
+                <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+                
+                  <li className="text-black">
+                    <span>Craft intuitive interfaces and responsive websites focused on conversion optimization</span>
+                  </li>
+                  <li className="text-black">
+                    <span>Design user flows, wireframes, and full website mockups (Figma/Adobe XD)</span>
+                  </li>
+                  <li className="text-black">
+                  Website redesigns improving usability metrics by 30%+</li>
+                </ul>
+              </div>
+              <div className="mt-4 pl-2">
+                <p className="font-semibold text-sm mb-2">Front-End Development - Designed and implemented internal system applications using:</p>
+                <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+                
+                  <li className="text-black">
+                    <span>Fully Functional Website:</span> Custom WordPress themes (PHP/ACF)
+                  </li>
+                  <li className="text-black">
+                    <span>Frontend Framework:</span> Angular/Next.js/Mitril JS with Tailwind CSS 
+                  </li>
+                  <li className="text-black">
+                    <span>Backend:</span> PostgreSQL with Redis caching
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="mt-4 pl-2">
+                <p className="font-bold text-sm mb-2">Creative Pursuits:</p>
+                <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+                
+                  <li className="text-black">
+                    Wedding Photography - Freelance brand storytelling projects
+                  </li>
+                  <li className="text-black">
+                    Pyrography Art - Hobby in wooden artworks
+                  </li>
+                </ul>
+              </div>
+              
             </div>
-            <div className="mt-10">
+            <div className="mt-5">
               <div className="mt-4 space-y-6">
                 <article className="text-sm text-gray-600">
                   <p className="text-base text-gray-900 mb-6">
