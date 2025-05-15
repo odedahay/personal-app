@@ -66,6 +66,12 @@
     "category": "blogs"
   },
   {
+    "slug": "mas-jesuit-website",
+    "title": "The MAS-Jesuits.org website",
+    "description": "A website for Jesuit parish priests, chaplains, educators, doctors, lawyers, astronomers, playwrights, and scientists. It serves as a resource for those discerning a vocation in the Jesuit mission and the Church.",
+    "category": "blogs"
+  },
+  {
     "slug": "eob-systems-integrator-application",
     "title": "EOB Systems Integrator Inc",
     "description": "The EOB website was designed to provide users with a comprehensive overview of their products, ranging from complex system setups to simple installations using the correct devices",
